@@ -1,1 +1,6 @@
-spring.cloud.custom-prop
+spring:
+  datasource:
+    url:
+    username: oracle
+    password: ${oraclePassword}
+    driver-class-name: oracle.jdbc.OracleDriver
