@@ -4,3 +4,8 @@ spring:
     username: oracle
     password: ${oraclePassword}
     driver-class-name: oracle.jdbc.OracleDriver
+
+
+app:
+  security:
+    key: ${appSecurityKey}
