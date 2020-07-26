@@ -7,8 +7,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class SpringCloudVaultIntegrationApplication implements CommandLineRunner {
-    @Value("${oraclePassword}")
-    private String oraclePassword;
+    // Reading through yml file
+    @Value("${app.security.key}")
+    private String appSecurityKey;
+    // Accessing same key what we added in vault and accessing that directly in @Value()
+    @Value("${appSecurityKey}")
+    private String secretKeyVaultDirectAccess;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringCloudVaultIntegrationApplication.class, args);
@@ -16,6 +20,7 @@ public class SpringCloudVaultIntegrationApplication implements CommandLineRunner
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("Password fetched from vault:" + oraclePassword);
+        System.out.println("Password fetched from vault:" + appSecurityKey);
+        System.out.println("Accessing vault key directly :" + secretKeyVaultDirectAccess);
     }
 }

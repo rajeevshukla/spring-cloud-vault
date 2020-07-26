@@ -5,5 +5,10 @@ spring:
     vault:
       token: s.lL1wRFK79QQQRflLyIS3WyYm
       scheme: http
-      host: http://127.0.0.1
+      host: 127.0.0.1
       port: 8200
+
+# custom property which should be fetched from vault server and assigned to app.security.key
+app:
+  security:
+    key: ${appSecurityKey}
